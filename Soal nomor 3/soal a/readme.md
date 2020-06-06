@@ -21,4 +21,5 @@ Query yang digunakan
 ![2020-06-06_18-02-55](assets/2020-06-06_18-02-55.png)
 
 Output dari Query :
+
 ![2020-06-06_18-05-19](assets/2020-06-06_18-05-19.png)
