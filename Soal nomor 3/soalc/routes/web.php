@@ -13,6 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[
+    'uses' => 'ProductController@index',
+])->name('index');
+
+Route::post('/',[
+    'uses' => 'ProductController@store',
+    'as'    => 'product.store'
+]);
+
+Route::delete('/{id}',[
+    'uses' => 'ProductController@destroy',
+    'as'    => 'product.destroy'
+]);
