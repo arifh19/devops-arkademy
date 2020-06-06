@@ -33,3 +33,9 @@
 .select{
     margin-bottom: 1em;
 }
+.inner{
+    display: inline;
+}
+.table-responsive{
+    width: auto;
+}
