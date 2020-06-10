@@ -21,7 +21,3 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/products',[
     'uses' => 'ProductController@indexApi'
 ]);
-Route::put('/{id}',[
-    'uses' => 'ProductController@update',
-    'as'    => 'product.update'
-]);

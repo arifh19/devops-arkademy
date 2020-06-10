@@ -3,25 +3,26 @@ var data;
 var no;
 var xhttp = new XMLHttpRequest();
 
-    $.ajax({
-        dataType: "json",
-        url: 'http://localhost:8000/api/products',
-        data: data,
-        success: function(data){
-            product = data;   
-        }
-    });
-function getProduct(){
+$.ajax({
+    dataType: "json",
+    url: 'http://localhost:8000/api/products',
+    data: data,
+    success: function (data) {
+        product = data;
+    }
+});
+
+function getProduct() {
     $.ajax({
         dataType: "json",
         url: '/api/products',
         data: data,
-        success: function(data){
-            product = data;   
+        success: function (data) {
+            product = data;
         }
     });
 }
-        
+
 function add() {
     $('#addModal').modal('show');
 
@@ -38,29 +39,35 @@ function edit(id) {
 
 }
 
-function update(){
-    
+function get_action(form) {
+    getProduct();
     let id = product[no].id
-    let cashier = product[no].id_cashier
-    let category = product[no].id_category
-    let nama = product[no].nama
-    let price = product[no].price
-       $.ajax({
-        url:"/api/"+id,
-        method:"PUT", //First change type to method here
-
-        data:{
-          id_cashier: cashier,
-          id_category: category,
-          nama: nama,
-          price: price,
-        },
-        success:function(response) {
-
-       },
-        });
+    form.action = '/' + id;
 }
 
 function hapus(nama, id) {
     swal("Data " + nama + " ID #" + id, "Berhasil dihapus", "success");
 }
+
+// function update(){
+
+//     let id = product[no].id
+//     let cashier = product[no].id_cashier
+//     let category = product[no].id_category
+//     let nama = product[no].nama
+//     let price = product[no].price
+//        $.ajax({
+//         url:"/api/"+id,
+//         method:"PUT", //First change type to method here
+
+//         data:{
+//           id_cashier: cashier,
+//           id_category: category,
+//           nama: nama,
+//           price: price,
+//         },
+//         success:function(response) {
+
+//        },
+//         });
+// }

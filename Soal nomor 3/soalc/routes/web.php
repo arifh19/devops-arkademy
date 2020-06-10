@@ -22,7 +22,12 @@ Route::post('/',[
     'as'    => 'product.store'
 ]);
 
-Route::delete('/{id}',[
+Route::post('/{id}',[
+    'uses' => 'ProductController@update',
+    'as'    => 'product.update'
+]);
+
+Route::get('/{id}',[
     'uses' => 'ProductController@destroy',
     'as'    => 'product.destroy'
 ]);

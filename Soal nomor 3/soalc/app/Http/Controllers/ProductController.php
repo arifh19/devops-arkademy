@@ -52,8 +52,10 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         $product = Product::find($id);
-        
+
         if(!$product->update($request->all())) return redirect()->back();
+
+        return redirect()->route('index');
     }
 
     /**
@@ -67,5 +69,7 @@ class ProductController extends Controller
         $product = Product::find($id);
 
         if (!$product->delete()) return redirect()->back();
+
+        return redirect()->route('index');
     }
 }
